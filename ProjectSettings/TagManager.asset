@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - ScoreObject
+  - Bag
+  - Basketball
   layers:
   - Default
   - TransparentFX
