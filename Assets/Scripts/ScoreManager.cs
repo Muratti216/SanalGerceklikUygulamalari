@@ -19,8 +19,9 @@ public class ScoreManager : MonoBehaviour
         UpdateText();
     }
 
+    // "Skor: " +  yazuyordu 25.satırda ben sadece sayıyı yazdırmak istiyorum. Bu yüzden 25.satırdaki kodu değiştirdim.
     void UpdateText()
     {
-        if (scoreText) scoreText.text = "Skor: " + score;
+        if (scoreText) scoreText.text = score.ToString();
     }
 }
