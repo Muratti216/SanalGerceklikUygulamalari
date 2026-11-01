@@ -93,9 +93,10 @@ sekmesinden **XR Interaction Simulator** örneğini içe aktarıp sahneye ekleyi
 Skor sistemi `ScoreManager` üzerinden merkezi olarak yönetilir ve sahnedeki
 skor metnini günceller.
 
-- **Basketbol:** Top üst bölgeden aşağı doğru geçip alt bölgeye ulaştığında
-  puan kazanılır.
-- Çöp kovası hareket ederken puanlama alt trigger'a gerçekten girme olayına
+- **Kağıt atma:** Buruşturulmuş kağıt `Basketball` etiketiyle alt trigger'a
+  girdiğinde başarılı atış sayılır ve puan kazanır. Bu etiket mevcut prefab
+  yapısında geriye dönük uyumluluk için kullanılmaktadır.
+- **Hareketli kova puanlaması:** Puanlama alt trigger'a gerçekten girme olayına
   göre yapılır; bu nedenle kova kağıdın altından hareket etse bile geçerli
   bir giriş puansız kalmaz. Eski üstten geçiş şartı `BasketZone` içindeki
   `Require Top Pass` alanından isteğe bağlı açılabilir.
@@ -108,11 +109,11 @@ skor metnini günceller.
   ulaşıldığında son başarılı atışta kovaya giren kağıt otomatik olarak silinir.
   Bu değer Inspector'da ayarlanabilir; sahnedeki varsayılan değer 10'dur.
 - **Zorluk eğrisi:** Çöp kovasına `TrashBinMovement` bileşeni eklenerek skor
-  eşiklerinde kovanın konumu değiştirilebilir. Örneğin `3, 6, 9` eşikleriyle
-  kova 3. başarılı atışta sağa, 6. atışta sola, 9. atışta tekrar sağa hareket
-  eder. Varsayılan hareket dünya Z eksenindedir; kovanın rotasyonu hareket
-  yönünü değiştirmez. `Movement Axis`, `Movement Distance` ve `Movement
-  Duration` değerleri hareketin yönünü ve zorluğunu ayarlar.
+  eşiklerinde kovanın konumu değiştirilebilir. Varsayılan `3, 6, 9`
+  eşikleriyle kova her eşikte yeni bir konuma geçer. Varsayılan hareket dünya
+  Z eksenindedir; kovanın rotasyonu hareket yönünü değiştirmez. `Movement Axis`,
+  `Movement Distance` ve `Movement Duration` değerleri Inspector'dan
+  değiştirilebilir.
 - **Salınım fazı:** `Enable Oscillation` açıkken kova `Oscillation Start Score`
   değerine ulaşıldığında sürekli ileri-geri hareket eder. Varsayılan olarak
   12. skordan sonra hareket başlar, kağıt atışlarını zorlaştırır ve 30. skorda
