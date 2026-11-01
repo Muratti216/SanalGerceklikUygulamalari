@@ -71,8 +71,8 @@ Sahneler `Assets/Scenes` klasöründe bulunur:
 - **ZenHome**: Ev/oda temalı VR deneyimi.
 - **SampleScene**: Unity'nin örnek sahnesi.
 
-Başlangıç için `BasicSceneCURRENT` veya `ZenHome` sahnelerinden birini açmanız
-önerilir.
+Başlangıç için `BasicSceneCURRENT` sahnesini açmanız önerilir, ders işlenilirken yapılmış olan 
+mini-oyunların iskeleti burada hazır olarak bulunur ve istediğiniz gibi geliştirebilirsiniz.
 
 ## Kontroller
 
