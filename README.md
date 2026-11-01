@@ -95,10 +95,29 @@ skor metnini günceller.
 
 - **Basketbol:** Top üst bölgeden aşağı doğru geçip alt bölgeye ulaştığında
   puan kazanılır.
+- Çöp kovası hareket ederken puanlama alt trigger'a gerçekten girme olayına
+  göre yapılır; bu nedenle kova kağıdın altından hareket etse bile geçerli
+  bir giriş puansız kalmaz. Eski üstten geçiş şartı `BasketZone` içindeki
+  `Require Top Pass` alanından isteğe bağlı açılabilir.
 - **Cornhole:** Deliğe giren torba 3 puan, tahtada duran torba 1 puan
   değerindedir.
 - **Skor bölgeleri:** Tanımlı etikete sahip nesneler bölgeye girdiğinde puan
   kazanır; bölgeden çıkınca puan geri alınabilir.
+- **Atılan kağıtları temizleme:** `BasketZone` bileşenindeki `Destroy Scored
+  Object` seçeneği açılırsa, `Successful Shots Before Destroy` değerine
+  ulaşıldığında son başarılı atışta kovaya giren kağıt otomatik olarak silinir.
+  Bu değer Inspector'da ayarlanabilir; sahnedeki varsayılan değer 10'dur.
+- **Zorluk eğrisi:** Çöp kovasına `TrashBinMovement` bileşeni eklenerek skor
+  eşiklerinde kovanın konumu değiştirilebilir. Örneğin `3, 6, 9` eşikleriyle
+  kova 3. başarılı atışta sağa, 6. atışta sola, 9. atışta tekrar sağa hareket
+  eder. Varsayılan hareket dünya Z eksenindedir; kovanın rotasyonu hareket
+  yönünü değiştirmez. `Movement Axis`, `Movement Distance` ve `Movement
+  Duration` değerleri hareketin yönünü ve zorluğunu ayarlar.
+- **Salınım fazı:** `Enable Oscillation` açıkken kova `Oscillation Start Score`
+  değerine ulaşıldığında sürekli ileri-geri hareket eder. Varsayılan olarak
+  12. skordan sonra hareket başlar, kağıt atışlarını zorlaştırır ve 30. skorda
+  durarak başlangıç konumuna döner. `Oscillation Distance`, `Oscillation
+  Duration` ve `Return To Start At End` Inspector'dan değiştirilebilir.
 - **Top sıfırlama:** Top belirlenen yüksekliğin altına düşer veya başlangıç
   konumundan çok uzaklaşırsa otomatik olarak geri getirilir.
 
@@ -128,6 +147,7 @@ ProjectSettings/     # Unity proje ayarları
 - `SlidingDoor.cs`
 - `PaperCrumpler.cs`
 - `BallRespawn.cs`
+- `TrashBinMovement.cs`
 
 ## Katkıda bulunma
 

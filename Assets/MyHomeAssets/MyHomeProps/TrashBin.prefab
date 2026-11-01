@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1174720523930101398}
   - component: {fileID: 2874045892140853555}
   - component: {fileID: 1793076354424313}
+  - component: {fileID: 5174218653098765432}
   m_Layer: 0
   m_Name: TrashBin
   m_TagString: Untagged
@@ -91,3 +92,27 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5174218653098765432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947422813623598124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9c7d6a5e8b4f7c9d1e2a3b4c5d6e7f, type: 3}
+  scoreThresholds:
+  - 3
+  - 6
+  - 9
+  - 12
+  movementAxis: {x: 0, y: 0, z: 1}
+  movementDistance: 0.5
+  movementDuration: 0.5
+  enableOscillation: 1
+  oscillationStartScore: 12
+  oscillationEndScore: 30
+  oscillationDistance: 0.5
+  oscillationDuration: 0.5
+  returnToStartAtEnd: 1

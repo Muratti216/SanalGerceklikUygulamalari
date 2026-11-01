@@ -20,8 +20,21 @@ public class PaperCrumpler : MonoBehaviour
 
     private void OnPaperGrabbed(SelectEnterEventArgs args)
     {
+        if (crumpledPaperPrefab == null)
+        {
+            Debug.LogError(
+                $"{name}: Crumpled Paper Prefab atanamıyor veya silinmiş. " +
+                "Inspector'da bir prefab asset'i seçin.");
+            return;
+        }
+
         // 1. Masadaki düz kağıdın pozisyonunda yeni buruşturulmuş kağıt üret
         GameObject crumpled = Instantiate(crumpledPaperPrefab, transform.position, transform.rotation);
+        if (crumpled == null)
+        {
+            Debug.LogError($"{name}: Buruşturulmuş kağıt üretilemedi.");
+            return;
+        }
         
         // 2. Yeni üretilen objenin XR Grab bileşenini al
         XRGrabInteractable grabInteractable = crumpled.GetComponent<XRGrabInteractable>();
@@ -44,6 +57,7 @@ public class PaperCrumpler : MonoBehaviour
     void OnDestroy()
     {
         // Hafıza sızıntısını (Memory Leak) önlemek için dinleyiciyi kaldır
-        simpleInteractable.selectEntered.RemoveListener(OnPaperGrabbed);
+        if (simpleInteractable != null)
+            simpleInteractable.selectEntered.RemoveListener(OnPaperGrabbed);
     }
 }
