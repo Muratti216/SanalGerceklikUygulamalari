@@ -150,18 +150,6 @@ ProjectSettings/     # Unity proje ayarları
 - `BallRespawn.cs`
 - `TrashBinMovement.cs`
 
-## Katkıda bulunma
-
-1. Bu depoyu fork'layın.
-2. Yeni bir branch oluşturun:
-
-   ```bash
-   git checkout -b feature/yeni-etkilesim
-   ```
-
-3. Değişikliklerinizi yapıp Unity içinde test edin.
-4. Açıklayıcı bir commit oluşturun ve pull request gönderin.
-
 ## Lisans
 
 Bu depoda henüz ayrı bir lisans dosyası bulunmamaktadır. Projeyi yeniden
